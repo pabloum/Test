@@ -24,12 +24,14 @@ namespace WebApplication.Controllers
         [HttpGet("{filter}")]
         public IActionResult SearchUsers(string filter)
         {
-            return Ok("Search users");
+            var users = _service.Filter(filter);
+            return Ok(users);
         }
 
         [HttpPost]
-        public IActionResult RegisterUser()
+        public IActionResult RegisterUser(/*UserDTO user*/)
         {
+            //var createdUser = _service.Create(user);
             return Ok("Register users");
         }
     }
