@@ -6,7 +6,7 @@ namespace Persistence.Repositories
 {
     public class BaseRepository<T> : IBaseRepository<T> where T : BaseEntity
     {
-        public IEnumerable<T> Create(T entity)
+        public T Create(T entity)
         {
             throw new System.NotImplementedException();
         }

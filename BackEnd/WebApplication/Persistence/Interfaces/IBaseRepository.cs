@@ -7,6 +7,6 @@ namespace Persistence.Interfaces
     {
         IEnumerable<T> GetAll();
         IEnumerable<T> Filter(string filter);
-        IEnumerable<T> Create(T entity);
+        T Create(T entity);
     }
 }
