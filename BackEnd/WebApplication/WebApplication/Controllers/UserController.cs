@@ -1,16 +1,27 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace WebApplication.Controllers
 {
-    public class UserController : Controller
+    [Route("api/[controller]")]
+    [ApiController]
+    public class UserController : ControllerBase
     {
-        public IActionResult Index()
+        [HttpGet]
+        public IActionResult GetUsers()
         {
-            return View();
+            return Ok("Get users");
+        }
+
+        [HttpGet("{filter}")]
+        public IActionResult SearchUsers(string filter)
+        {
+            return Ok("Search users");
+        }
+
+        [HttpPost]
+        public IActionResult RegisterUser()
+        {
+            return Ok("Register users");
         }
     }
 }
