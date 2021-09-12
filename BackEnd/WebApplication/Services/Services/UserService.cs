@@ -1,8 +1,13 @@
-﻿using Services.Interfaces;
+﻿using Persistence.Entities;
+using Persistence.Interfaces;
+using Services.Interfaces;
 
 namespace Services.Services
 {
-    public class UserService : BaseService, IUserService
+    public class UserService : BaseService<User>, IUserService
     {
+        public UserService(IUserRepository repo) : base(repo)
+        {
+        }
     }
 }

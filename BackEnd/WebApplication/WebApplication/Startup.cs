@@ -1,13 +1,12 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Persistence.Interfaces;
+using Persistence.Repositories;
+using Services.Interfaces;
+using Services.Services;
 using WebApplication.Controllers;
 
 namespace WebApplication
@@ -26,6 +25,14 @@ namespace WebApplication
         {
             services.AddRazorPages();
             services.AddMvc(opt => opt.EnableEndpointRouting = false);
+            
+            ConfigureReposAndServices(services);
+        }
+
+        public void ConfigureReposAndServices(IServiceCollection services)
+        {
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IUserService, UserService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

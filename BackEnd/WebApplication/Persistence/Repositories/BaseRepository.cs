@@ -4,19 +4,19 @@ using System.Collections.Generic;
 
 namespace Persistence.Repositories
 {
-    public class BaseRepository : IBaseRepository<BaseEntity>
+    public class BaseRepository<T> : IBaseRepository<T> where T : BaseEntity
     {
-        public IEnumerable<User> Create(BaseEntity entity)
+        public IEnumerable<T> Create(T entity)
         {
             throw new System.NotImplementedException();
         }
 
-        public IEnumerable<User> Filter(string filter)
+        public IEnumerable<T> Filter(string filter)
         {
             throw new System.NotImplementedException();
         }
 
-        public IEnumerable<User> GetAll()
+        public IEnumerable<T> GetAll()
         {
             throw new System.NotImplementedException();
         }

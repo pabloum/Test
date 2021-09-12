@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Services.Interfaces;
 
 namespace WebApplication.Controllers
 {
@@ -6,10 +7,18 @@ namespace WebApplication.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
+        readonly IUserService _service;
+
+        public UserController(IUserService service)
+        {
+            _service = service;
+        }
+
         [HttpGet]
         public IActionResult GetUsers()
         {
-            return Ok("Get users");
+            var users = _service.GetAll();
+            return Ok(users);
         }
 
         [HttpGet("{filter}")]

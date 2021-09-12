@@ -1,8 +1,9 @@
-﻿using Persistence.Interfaces;
+﻿using Persistence.Entities;
+using Persistence.Interfaces;
 
 namespace Persistence.Repositories
 {
-    public class UserRepository : IUserRepository
+    public class UserRepository : BaseRepository<User>, IUserRepository
     {
     }
 }

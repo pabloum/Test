@@ -1,13 +1,21 @@
 ﻿using Persistence.Entities;
+using Persistence.Interfaces;
 using Services.Interfaces;
 using System;
 using System.Collections.Generic;
 
 namespace Services.Services
 {
-    public class BaseService : IBaseService<BaseEntity>
+    public class BaseService<T> : IBaseService<T> where T : BaseEntity
     {
-        public IEnumerable<User> Create(BaseEntity entity)
+        readonly IBaseRepository<T> _repo;
+
+        public BaseService(IBaseRepository<T> repo)
+        {
+            _repo = repo;
+        }
+
+        public IEnumerable<T> Create(T entity)
         {
             try
             {
@@ -19,7 +27,7 @@ namespace Services.Services
             }
         }
 
-        public IEnumerable<User> Filter(string filter)
+        public IEnumerable<T> Filter(string filter)
         {
             try
             {
@@ -31,11 +39,11 @@ namespace Services.Services
             }
         }
 
-        public IEnumerable<User> GetAll()
+        public IEnumerable<T> GetAll()
         {
             try
             {
-                throw new NotImplementedException();
+                return _repo.GetAll();
             }
             catch (Exception e)
             {
