@@ -1,4 +1,4 @@
-﻿using Persistence.Entities;
+﻿using Entities.Entities;
 
 namespace Persistence.Interfaces
 {

@@ -1,6 +1,6 @@
-﻿namespace Persistence.Entities
+﻿namespace Entities.DTOs
 {
-    public class User : BaseEntity
+    public class UserDTO : BaseDTO
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }

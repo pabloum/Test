@@ -1,4 +1,4 @@
-﻿using Persistence.Entities;
+﻿using Entities.Entities;
 using Persistence.Interfaces;
 
 namespace Persistence.Repositories

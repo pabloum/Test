@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Entities.DTOs;
+using Microsoft.AspNetCore.Mvc;
 using Services.Interfaces;
 
 namespace WebApplication.Controllers
@@ -29,9 +30,9 @@ namespace WebApplication.Controllers
         }
 
         [HttpPost]
-        public IActionResult RegisterUser(/*UserDTO user*/)
+        public IActionResult RegisterUser(UserDTO user)
         {
-            //var createdUser = _service.Create(user);
+            var createdUser = _service.Create(user);
             return Ok("Register users");
         }
     }

@@ -1,4 +1,4 @@
-﻿namespace Persistence.Entities
+﻿namespace Entities.Entities
 {
     public class BaseEntity
     {

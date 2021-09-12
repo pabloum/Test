@@ -1,12 +1,13 @@
-﻿using Persistence.Entities;
+﻿using Entities.DTOs;
+using Entities.Entities;
 using System.Collections.Generic;
 
 namespace Services.Interfaces
 {
-    public interface IBaseService<T>  where T : BaseEntity
+    public interface IBaseService<T, DTO>  where T : BaseEntity where DTO : BaseDTO
     {
-        IEnumerable<T> GetAll();
-        IEnumerable<T> Filter(string filter);
-        IEnumerable<T> Create(T entity);
+        IEnumerable<DTO> GetAll();
+        IEnumerable<DTO> Filter(string filter);
+        IEnumerable<DTO> Create(DTO entity);
     }
 }
