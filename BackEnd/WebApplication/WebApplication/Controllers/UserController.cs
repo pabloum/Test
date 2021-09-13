@@ -1,4 +1,5 @@
 ﻿using Entities.DTOs;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Services.Interfaces;
 
@@ -6,6 +7,7 @@ namespace WebApplication.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors("MyPolicy")]
     public class UserController : ControllerBase
     {
         readonly IUserService _service;
