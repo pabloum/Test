@@ -2,7 +2,7 @@ const Button = (props) => {
     return <a 
                 className='btn'
                 className="App-link"
-                href="https://google.com"
+                href={props.link}
                 target="_blank"
             >
                 {props.title}
@@ -10,7 +10,8 @@ const Button = (props) => {
 }
 
 Button.defaultProps = {
-    title: 'Create User'
+    title: 'Create User',
+    link: '/CreateUser'
 }
 
 export default Button

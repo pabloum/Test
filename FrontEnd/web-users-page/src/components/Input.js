@@ -1,25 +1,5 @@
-var users = [
-    {
-        "firstName": "Pablo",
-        "lastName": "Uribe",
-        "fullName": "Pablo Uribe",
-        "username": "puribe"
-    },
-    {
-        "firstName": "James",
-        "lastName": "Rodriguez",
-        "fullName": "James Rodriguez",
-        "username": "jrodriguez"
-    },
-    {
-        "firstName": "Vero",
-        "lastName": "Sharapova",
-        "fullName": "Vero Sharapova",
-        "username": "vsharapova"
-    }
-]
-
 const Input = (props) => {
+    console.log(props.users)
     return <div className="App-input">
                 <input 
                     type="text" 
@@ -28,7 +8,7 @@ const Input = (props) => {
                     list="user-specs"
                 />
                     <datalist id="user-specs" className="App-input">
-                        {users.map(
+                        {props.users.map(
                             function(user) {                        
                                 return (<>
                                     <option value={user.fullName + " (" + user.username + ")"}/>
