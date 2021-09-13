@@ -21,14 +21,14 @@ END
 BEGIN
   IF NOT EXISTS (SELECT Id FROM [dbo].[User] WHERE Id = 2)
   BEGIN
-    INSERT INTO [dbo].[User] VALUES (2, 'Maria', 'Rodriguez', 'mrodriguez')
+    INSERT INTO [dbo].[User] VALUES (2, 'James', 'Rodriguez', 'jrodriguez')
   END
 END
 
 BEGIN
   IF NOT EXISTS (SELECT Id FROM [dbo].[User] WHERE Id = 3)
   BEGIN
-    INSERT INTO [dbo].[User] VALUES (3, 'Vero', 'Abrams', 'vabrams')
+    INSERT INTO [dbo].[User] VALUES (3, 'Vero', 'Sharapova', 'vsharapova')
   END
 END
 
