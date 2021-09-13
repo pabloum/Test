@@ -33,7 +33,7 @@ namespace WebApplication.Controllers
         public IActionResult RegisterUser(UserDTO user)
         {
             var createdUser = _service.Create(user);
-            return Ok("Register users");
+            return Ok(createdUser);
         }
     }
 }

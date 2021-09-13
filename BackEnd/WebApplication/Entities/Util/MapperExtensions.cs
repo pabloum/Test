@@ -5,34 +5,7 @@ namespace Entities.Util
 {
     public static class MapperExtensions
     {
-        // There are libraries like AutoMapper that could do this job, but I decided to implement this manually.
-        // One of the reasons being that I want to show that I can use extension methods. 
-
-        public static BaseDTO ToDTO(this BaseEntity entity)
-        {
-            if (entity is User)
-            {
-                return ((User)entity).ToDTO();
-            }
-            // Add here future DTOs
-            else
-            {
-                return null;
-            }
-        }
-
-        public static BaseEntity ToEntity(this BaseDTO dto)
-        {
-            if (dto is UserDTO)
-            {
-                return ((UserDTO)dto).ToEntity();
-            }
-            // Add here future entities 
-            else
-            {
-                return null;
-            }
-        }
+        // There are libraries like AutoMapper that could do this job.
 
         public static UserDTO ToDTO(this User user)
         {
