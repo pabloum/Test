@@ -40,7 +40,6 @@ namespace Entities.Util
             {
                 FirstName = user.FirstName,
                 LastName = user.LastName,
-                FullName = user.FirstName + user.LastName,
                 Username = user.Username
             };
 
