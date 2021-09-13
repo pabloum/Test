@@ -31,3 +31,6 @@ This was built using Database first approach. Three endpoints were exposed to in
 ## Front end
 
 This was built with React. 
+
+However, the app is not entirely functional. The Form that creates user is not hitting the endpoint. And the Details route is not hitting any endpoint either, thus the data displayed is hardcoded.
+
