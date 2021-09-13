@@ -9,5 +9,6 @@ namespace Services.Interfaces
         IEnumerable<UserDTO> GetAll();
         IEnumerable<UserDTO> Filter(string filter);
         UserDTO Create(UserDTO entity);
+        UserDTO GetById(int id);
     }
 }

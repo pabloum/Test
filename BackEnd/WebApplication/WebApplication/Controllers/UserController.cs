@@ -24,7 +24,14 @@ namespace WebApplication.Controllers
             return Ok(users);
         }
 
-        [HttpGet("{filter}")]
+        [HttpGet("{id}")]
+        public IActionResult GetUserById(int id)
+        {
+            var user = _service.GetById(id);
+            return Ok(user);
+        }
+
+        [HttpGet("filter/{filter}")]
         public IActionResult SearchUsers(string filter)
         {
             var users = _service.Filter(filter);

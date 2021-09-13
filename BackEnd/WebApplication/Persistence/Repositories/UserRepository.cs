@@ -53,5 +53,14 @@ namespace Persistence.Repositories
                 return users;
             }
         }
+
+        public User GetById(int id)
+        {
+            using (var context = new UsersDbContext(_db))
+            {
+                var user = context.User.AsNoTracking().Where(u => u.Id == id).FirstOrDefault();
+                return user;
+            }
+        }
     }
 }

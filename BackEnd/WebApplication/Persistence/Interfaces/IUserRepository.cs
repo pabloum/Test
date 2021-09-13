@@ -8,5 +8,6 @@ namespace Persistence.Interfaces
         IEnumerable<User> GetAll();
         IEnumerable<User> Filter(string filter);
         User Create(User entity);
+        User GetById(int id);
     }
 }

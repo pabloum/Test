@@ -58,5 +58,17 @@ namespace Services.Services
             }
         }
 
+        public UserDTO GetById(int id)
+        {
+            try
+            {
+                var user = _repo.GetById(id).ToDTO();
+                return user;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
     }
 }
