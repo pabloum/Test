@@ -3,6 +3,8 @@ import Header from './components/Header'
 import Button from './components/Button'
 import Input from './components/Input'
 
+import {BrowserRouter, Switch, Route, Link} from 'react-router-dom'
+
 import {useState, useEffect} from 'react'
 
 var usersQuemados = [
@@ -50,8 +52,24 @@ function App() {
     <div className="App">
       <header className="App-header">        
         <Header />
-        <Button />
-        <Input users={users}/>
+        <BrowserRouter>
+          <Switch>
+
+            <Route path="/CreateUser">
+              <h1>Create new User</h1>
+            </Route>
+            
+            <Route path="/User/fullname">
+              <h1>User Details</h1>
+            </Route>
+
+            <Route path="/">
+              <Link to="/CreateUser"><Button /></Link>
+              <Input users={users}/>
+            </Route>
+
+          </Switch>
+        </BrowserRouter>
       </header>
     </div>
   );
