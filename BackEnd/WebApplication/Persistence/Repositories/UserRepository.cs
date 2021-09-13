@@ -32,7 +32,11 @@ namespace Persistence.Repositories
             using (var context = new UsersDbContext(_db))
             {
                 var users = context.User.AsNoTracking();
-                users = users.Where(u => u.Username.Contains(filter) || u.FirstName.Contains(filter) || u.LastName.Contains(filter));
+                users = users.Where(u => u.Username.Contains(filter) || u.FirstName.Contains(filter) || u.LastName.Contains(filter))
+                             .OrderBy(u => u.FirstName)
+                             .ThenBy(u => u.LastName)
+                             .ThenBy(u => u.Username)
+                             .Take(10);
                 return users.ToList();
             }
         }
@@ -41,7 +45,11 @@ namespace Persistence.Repositories
         {
             using (var context = new UsersDbContext(_db))
             {
-                var users = context.User.AsNoTracking().ToList();
+                var users = context.User.AsNoTracking()
+                                 .OrderBy(u => u.FirstName)
+                                 .ThenBy(u => u.LastName)
+                                 .ThenBy(u => u.Username)
+                                 .ToList();
                 return users;
             }
         }
