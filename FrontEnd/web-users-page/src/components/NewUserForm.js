@@ -6,13 +6,13 @@ const Form = (props) => {
 
                 <form>
                     <label for="fname">First name:</label><br/>
-                    <input type="text" id="fname" name="fname"/><br/>
+                    <input type="text" id="fname" name="fname" placeholder="Enter here the Firstname"/><br/>
 
                     <label for="lname">Last name:</label><br/>
-                    <input type="text" id="lname" name="lname"/><br/>
+                    <input type="text" id="lname" name="lname" placeholder="Enter here the Lastname"/><br/>
 
                     <label for="uname">Username:</label><br/>
-                    <input type="text" id="uname" name="uname"/><br/>
+                    <input type="text" id="uname" name="uname" placeholder="Enter here the Username"/><br/>
 
                     <input type="submit" value="Submit"></input>
                 </form>
