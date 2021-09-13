@@ -2,37 +2,14 @@ import './App.css';
 import Header from './components/Header'
 import Button from './components/Button'
 import Input from './components/Input'
+import Form from './components/NewUserForm'
+import UserDetails from './components/UserDetails'
+import usersQuemados from './Util/usersMock'
 
 import {BrowserRouter, Switch, Route, Link} from 'react-router-dom'
 
 import {useState, useEffect} from 'react'
 
-var usersQuemados = [
-  {
-      "firstName": "Pablo",
-      "lastName": "Uribe",
-      "fullName": "Pablo Uribe",
-      "username": "puribe"
-  },
-  {
-      "firstName": "James",
-      "lastName": "Rodriguez",
-      "fullName": "James Rodriguez",
-      "username": "jrodriguez"
-  },
-  {
-      "firstName": "Vero",
-      "lastName": "Sharapova",
-      "fullName": "Vero Sharapova",
-      "username": "vsharapova"
-  },
-  {
-    "firstName": "Perro",
-    "lastName": "Feo",
-    "fullName": "Perro Feo",
-    "username": "vsharapova"
-  }
-]
 
 function App() {
   const [users, setUsers] = useState([])
@@ -56,11 +33,11 @@ function App() {
           <Switch>
 
             <Route path="/CreateUser">
-              <h1>Create new User</h1>
+              <Form/>
             </Route>
             
-            <Route path="/User/fullname">
-              <h1>User Details</h1>
+            <Route path="/User/ID">
+              <UserDetails/>
             </Route>
 
             <Route path="/">
