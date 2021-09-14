@@ -32,5 +32,5 @@ This was built using Database first approach. Three endpoints were exposed to in
 
 This was built with React. 
 
-However, the app is not entirely functional. The Form that creates user is not hitting the endpoint. And the Details route is not hitting any endpoint either, thus the data displayed is hardcoded.
+The app is not entirely functional. The Form that creates user and the List of all users is working and hitting the proper endpoints. However, the Details route is not hitting any endpoint, thus the data displayed is hardcoded.
 
