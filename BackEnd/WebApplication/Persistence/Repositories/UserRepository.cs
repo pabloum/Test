@@ -49,6 +49,7 @@ namespace Persistence.Repositories
                                  .OrderBy(u => u.FirstName)
                                  .ThenBy(u => u.LastName)
                                  .ThenBy(u => u.Username)
+                                 .Take(10)
                                  .ToList();
                 return users;
             }
